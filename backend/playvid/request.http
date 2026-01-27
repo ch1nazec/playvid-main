@@ -1,0 +1,62 @@
+###
+POST http://127.0.0.1:8000/api/token/
+Content-Type: application/json
+
+{
+    "username": "nibu",
+    "password": "password228."
+}
+
+###
+POST http://127.0.0.1:8000/api/token/refresh/
+Content-Type: application/json
+
+{
+    "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2ODEwNTU0MSwiaWF0IjoxNzY4MDE5MTQxLCJqdGkiOiI3MTZjMTdiYmZkNmY0MGEzYTA5NzBmNjJlNGEwYzA4ZSIsInVzZXJfaWQiOiIxMiJ9.fm3phUJsB1lOhKpTVuiN_U1MPA-ACTFdhKe9Y82LOR0"
+}
+
+###
+GET http://127.0.0.1:8000/api/video/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY4MDU2MDgwLCJpYXQiOjE3NjgwNTI0ODAsImp0aSI6IjYwNDMxYTgzNmUzMzRmZjg5ODNkZmFkZDdhNTkwNzU1IiwidXNlcl9pZCI6IjEyIn0.HO_98WUMyDQY57p5Lt9NvchHO8abUkRisOHfwLDQjjc
+
+###
+GET http://127.0.0.1:8000/api/users/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY4MDE3MTU1LCJpYXQiOjE3NjgwMTYyNTUsImp0aSI6IjQxNmQ3NjRjZTI0MjRlYzZiODE4MzMyYmM3M2IwMzg5IiwidXNlcl9pZCI6IjEifQ.2W4eRiYxYLfQWFIc4lAW-WeZELPxHsoDQHaKstNksnI
+
+###
+POST http://127.0.0.1:8000/api/users/create/
+Content-Type: application/json
+
+{
+    "username": "Mine",
+    "password": "password228.",
+    "email": "ididi@gmail.com",
+    "phone_number": "+79089898989",
+    "first_name": "Наполеон",
+    "last_name": "Хуебесович"
+}
+
+
+
+###
+POST http://127.0.0.1:8000/api/video/upload/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY4MDIyNzUzLCJpYXQiOjE3NjgwMTkxNTMsImp0aSI6IjcyNWQ3ZjMwMDgxNDQyNzU4ZWQ2N2RlMjFjY2VkZjRjIiwidXNlcl9pZCI6IjEyIn0.TzAxFv0_Z3O04c4qcjUvjRDiF8smiCoi2KyN2b3RoSY
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name"
+
+Тест из api
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="description"
+
+Это видео от хуебесов, готовьтесь
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="preview"; filename="WIN_20260108_17_26_27_Pro.jpg"
+
+< C:\Users\zaice\Pictures\Camera Roll\WIN_20260108_17_26_27_Pro.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="video"; filename="WIN_20260108_17_26_11_Pro.mp4"
+
+< C:\Users\zaice\Pictures\Camera Roll\WIN_20260108_17_26_11_Pro.mp4
+------WebKitFormBoundary7MA4YWxkTrZu0gW--

@@ -1,0 +1,322 @@
+[
+  {
+    "model": "users.CustomUser",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$P6l1FLSjUinWsgryVu5kTV$zPrKq7Qv9sS2y/nPQAmRkBt7ozhtfoygClLdjeaA3QA=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Lord_Huebes",
+      "first_name": "Фёдор",
+      "last_name": "Какашкин",
+      "email": "huebes_killer@mail.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-01T12:00:00Z",
+      "phone_number": "+79991234567",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.Channel",
+    "pk": 1,
+    "fields": {
+      "user_id": 1,
+      "avatar": "",
+      "channel_name": "Штаб Антихуебесов",
+      "slug_name": "shtab-antihuebesov",
+      "created_date": "2024-12-26",
+      "description": "Оперативный штаб по борьбе с хуебесами и летающими членами. Челюхи в кустах — наш стратегический запас.",
+      "preview": ""
+    }
+  },
+  {
+    "model": "users.CustomUser",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$P6l1FLSjUinWsgryVu5kTV$zPrKq7Qv9sS2y/nPQAmRkBt7ozhtfoygClLdjeaA3QA=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Karas_Stoykiy",
+      "first_name": "Карась",
+      "last_name": "Мычащий",
+      "email": "karas@bunker.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-02T12:00:00Z",
+      "phone_number": "+79997654321",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.Channel",
+    "pk": 2,
+    "fields": {
+      "user_id": 2,
+      "avatar": "",
+      "channel_name": "Карась и Федечка",
+      "slug_name": "karas-i-fedechka",
+      "created_date": "2024-12-26",
+      "description": "Только правда про пальчики в жопе и чеченские клады. Иди нахуй, если не согласен.",
+      "preview": ""
+    }
+  },
+  {
+    "model": "users.CustomUser",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$P6l1FLSjUinWsgryVu5kTV$zPrKq7Qv9sS2y/nPQAmRkBt7ozhtfoygClLdjeaA3QA=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Napoleon_Cherdak",
+      "first_name": "Наполеон",
+      "last_name": "Чердаков",
+      "email": "napon@cherdak.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-03T12:00:00Z",
+      "phone_number": "+79993334455",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.Channel",
+    "pk": 3,
+    "fields": {
+      "user_id": 3,
+      "avatar": "",
+      "channel_name": "Тактика бегства из дурки",
+      "slug_name": "pobeg-iz-durki",
+      "created_date": "2024-12-26",
+      "description": "Планы побегов, чертежи вертолётов из члена и карты расположения челюх.",
+      "preview": ""
+    }
+  },
+  {
+    "model": "users.CustomUser",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$P6l1FLSjUinWsgryVu5kTV$zPrKq7Qv9sS2y/nPQAmRkBt7ozhtfoygClLdjeaA3QA=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Sidor_1993",
+      "first_name": "Сидор",
+      "last_name": "Несдавшийся",
+      "email": "sidr@stalker.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-04T12:00:00Z",
+      "phone_number": "+79995556677",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.Channel",
+    "pk": 4,
+    "fields": {
+      "user_id": 4,
+      "avatar": "",
+      "channel_name": "Рассказы у костра",
+      "slug_name": "istorii-u-kostra",
+      "created_date": "2024-12-26",
+      "description": "Истории о том, как меня расстреляли в 93-м, но я не сдался. Для своих.",
+      "preview": ""
+    }
+  },
+  {
+    "model": "users.CustomUser",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$P6l1FLSjUinWsgryVu5kTV$zPrKq7Qv9sS2y/nPQAmRkBt7ozhtfoygClLdjeaA3QA=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Trump_Na_Vertolete",
+      "first_name": "Дональд",
+      "last_name": "Вертолётов",
+      "email": "trump@helicopter.us",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-05T12:00:00Z",
+      "phone_number": "+79998889900",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.Channel",
+    "pk": 5,
+    "fields": {
+      "user_id": 5,
+      "avatar": "",
+      "channel_name": "24 часа до пиздеца",
+      "slug_name": "24-chasa-do-pizdetsa",
+      "created_date": "2024-12-26",
+      "description": "Экстренные новости о хуебесах, капитуляциях и сделках с НЛО.",
+      "preview": ""
+    }
+  },
+  {
+    "model": "users.CustomUser",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$P6l1FLSjUinWsgryVu5kTV$zPrKq7Qv9sS2y/nPQAmRkBt7ozhtfoygClLdjeaA3QA=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Steve_Jobs_Reborn",
+      "first_name": "Стив",
+      "last_name": "Воскресший",
+      "email": "jobs@apple.from.grave",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-06T12:00:00Z",
+      "phone_number": "+79991112233",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.Channel",
+    "pk": 6,
+    "fields": {
+      "user_id": 6,
+      "avatar": "",
+      "channel_name": "Реинкарнация и биткоины",
+      "slug_name": "reincarnation-bitcoin",
+      "created_date": "2024-12-26",
+      "description": "Как заработать на петардах в жопе и возродиться после смерти.",
+      "preview": ""
+    }
+  },
+  {
+    "model": "users.CustomUser",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$P6l1FLSjUinWsgryVu5kTV$zPrKq7Qv9sS2y/nPQAmRkBt7ozhtfoygClLdjeaA3QA=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Lenin_Parovoz",
+      "first_name": "Владимир",
+      "last_name": "Паровозов",
+      "email": "lenin@parovoz.su",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-07T12:00:00Z",
+      "phone_number": "+79994445566",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.Channel",
+    "pk": 7,
+    "fields": {
+      "user_id": 7,
+      "avatar": "",
+      "channel_name": "Революция на рельсах",
+      "slug_name": "revolution-parovoz",
+      "created_date": "2024-12-26",
+      "description": "Соединяем Ленина, Томаса и хуебесов в одну теорию заговора.",
+      "preview": ""
+    }
+  },
+  {
+    "model": "users.CustomUser",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$P6l1FLSjUinWsgryVu5kTV$zPrKq7Qv9sS2y/nPQAmRkBt7ozhtfoygClLdjeaA3QA=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Chingis_Smesh",
+      "first_name": "Чингис",
+      "last_name": "Смешариков",
+      "email": "chingis@smeshariki.mn",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-08T12:00:00Z",
+      "phone_number": "+79997778899",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.Channel",
+    "pk": 8,
+    "fields": {
+      "user_id": 8,
+      "avatar": "",
+      "channel_name": "Монголы в глиттере",
+      "slug_name": "mongoly-v-glittere",
+      "created_date": "2024-12-26",
+      "description": "Завоевание мира через розовые каски и глиттер-гранатомёты.",
+      "preview": ""
+    }
+  },
+  {
+    "model": "users.CustomUser",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$P6l1FLSjUinWsgryVu5kTV$zPrKq7Qv9sS2y/nPQAmRkBt7ozhtfoygClLdjeaA3QA=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "Femboy_Attack",
+      "first_name": "Артём",
+      "last_name": "Глиттерный",
+      "email": "femboy@attack.ru",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-09T12:00:00Z",
+      "phone_number": "+79990001122",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.Channel",
+    "pk": 9,
+    "fields": {
+      "user_id": 9,
+      "avatar": "",
+      "channel_name": "Фембои против братишек",
+      "slug_name": "femboy-protiv-bratishek",
+      "created_date": "2024-12-26",
+      "description": "Борьба за запрет слова «братишка» и право на маникюр в окопах.",
+      "preview": ""
+    }
+  },
+  {
+    "model": "users.CustomUser",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$P6l1FLSjUinWsgryVu5kTV$zPrKq7Qv9sS2y/nPQAmRkBt7ozhtfoygClLdjeaA3QA=",
+      "last_login": null,
+      "is_superuser": true,
+      "username": "Admin_Huebestan",
+      "first_name": "Админ",
+      "last_name": "Всея Хуебестана",
+      "email": "admin@huebestan.gov",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-01-10T12:00:00Z",
+      "phone_number": "+79991231231",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.Channel",
+    "pk": 10,
+    "fields": {
+      "user_id": 10,
+      "avatar": "",
+      "channel_name": "Министерство Правды Хуебесов",
+      "slug_name": "ministry-huebes-truth",
+      "created_date": "2024-12-26",
+      "description": "Официальный канал. Здесь решаем, что такое «чувствительность» и как правильно атаковать через вибраточлены.",
+      "preview": ""
+    }
+  }
+]
