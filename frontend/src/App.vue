@@ -4,8 +4,7 @@
 
 <template>
     <div id="app">
-        <router-link to="/">Главная</router-link>
-        <router-link to="/video">О нас</router-link>
+        <router-link to="/">Главная</router-link><br>
         <router-view></router-view>
     </div>
 

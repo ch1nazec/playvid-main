@@ -100,7 +100,10 @@ class ChannelView(generics.RetrieveUpdateDestroyAPIView):
     lookup_url_kwarg = 'channel_id'
     
     
-    @method_decorator(cache_page(60 * 15, key_prefix='channel-detail'))
+    # @method_decorator(cache_page(60 * 15, key_prefix='channel-detail'))
+    # def get(self, request, *args, **kwargs):
+    #     return super().get(request, *args, **kwargs)
+
     def get_permissions(self):
         """
         Check on the users can all,

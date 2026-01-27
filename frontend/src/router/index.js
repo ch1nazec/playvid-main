@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue';
 import VideoDetail from '@/views/VideoDetail.vue';
+import ChannelList from '@/views/ChannelList.vue';
 
 
 const router = createRouter({
@@ -15,6 +16,12 @@ const router = createRouter({
       path: '/video/:id',
       name: 'video',
       component: VideoDetail
+    },
+
+    {
+      path: '/channel',
+      name: 'channels',
+      component: ChannelList
     }
   ]
 })

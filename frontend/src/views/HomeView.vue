@@ -29,21 +29,23 @@ onMounted(() => {
     <VideosSort :toggleSort="toggleSort"/>
     <div class="videos-container">
         <div v-for="video in videosSorted" :key="video.id" class="video-card">
-            <div class="video-preview-container">
-                <img 
-                    :src="video.preview || 'src/assets/dont_preview.png'" 
-                    :alt="video.name"
-                    class="video-preview"
-                    loading="lazy"
-                >
-                <div class="video-overlay">
-                    <button class="play-button">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </button>
+            <router-link :to="{name: 'video', params: {id: video.id}}">
+                <div class="video-preview-container">
+                    <img 
+                        :src="video.preview || 'src/assets/dont_preview.png'" 
+                        :alt="video.name"
+                        class="video-preview"
+                        loading="lazy"
+                    >
+                    <div class="video-overlay">
+                        <button class="play-button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </router-link>
             <div class="video-content">
                 <div class="channel-info">
                     <div class="channel-avatar">

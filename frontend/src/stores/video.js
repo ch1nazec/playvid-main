@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import axios from 'axios'
 
+
 export const useVideosStore = defineStore('video', {
     state: () => ({
         videos: [],
@@ -14,7 +15,7 @@ export const useVideosStore = defineStore('video', {
 })
 
 
-export const useVideoDetail = defineStore('video', {
+export const useVideoDetail = defineStore('videoDetail', {
     state: () => ({
         video: {},
     }),
