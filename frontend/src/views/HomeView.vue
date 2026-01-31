@@ -2,6 +2,7 @@
 import { computed, onMounted, ref } from 'vue';
 import { useVideosStore } from '@/stores/video';
 import { storeToRefs } from 'pinia';
+import defaultAvatar from '@/assets/default_avatar.png'
 import VideosSort from '@/components/VideosSort.vue';
 import _ from 'lodash';
 
@@ -48,16 +49,17 @@ onMounted(() => {
             </router-link>
             <div class="video-content">
                 <div class="channel-info">
-                    <div class="channel-avatar">
-                        <img 
-                            :src="video.channel_avatar || 'src/assets/default_avatar.png'" 
-                            :alt="video.channel_name"
-                        >
-                    </div>
-                    <div class="channel-details">
-                        <h3 class="channel-name">{{ video.channel_name || "Без названия" }}</h3>
-                        <span class="upload-time">2 дня назад</span>
-                    </div>
+                    <router-link :to="{name: 'channel', params: {id: video.channel_id}}"><div class="channel-avatar">
+                            <img 
+                                :src="video.channel_avatar || defaultAvatar" 
+                                :alt="video.channel_name"
+                            >
+                        </div>
+                        <div class="channel-details">
+                            <h3 class="channel-name">{{ video.channel_name || "Без названия" }}</h3>
+                            <span class="upload-time">2 дня назад</span>
+                        </div>
+                    </router-link>
                 </div>
                 <h2 class="video-title" :title="video.name">
                     {{ video.name }}

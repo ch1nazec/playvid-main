@@ -8,6 +8,7 @@ from users.serializers import UserSerializer, ChannelSerializer
 from rest_framework import generics
 from rest_framework.permissions import AllowAny, IsAuthenticated, BasePermission
 from rest_framework.response import Response
+from rest_framework.views import APIView
 
 
 # Create your views here.
@@ -31,6 +32,14 @@ class IsOwnerOrStaff(BasePermission):
             return obj.owner.id == request.user.id
         
         return False
+
+
+class CurrentUserView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        serializer = UserSerializer(request.user)
+        return Response(serializer.data)
 
 
 class CreateUserView(generics.CreateAPIView):

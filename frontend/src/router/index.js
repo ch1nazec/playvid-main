@@ -2,11 +2,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue';
 import VideoDetail from '@/views/VideoDetail.vue';
 import ChannelList from '@/views/ChannelList.vue';
+import UserDetail from '@/views/UserDetail.vue';
+import ChannelDetail from '@/views/ChannelDetail.vue';
+import { useAuthStore } from '@/stores/auth';
 
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
+const routes = [
     {
       path: '/',
       name: 'home',
@@ -17,13 +18,56 @@ const router = createRouter({
       name: 'video',
       component: VideoDetail
     },
-
     {
       path: '/channel',
       name: 'channels',
       component: ChannelList
-    }
+    },
+    {
+      path: '/channel/:id',
+      name: 'channel',
+      component: ChannelDetail
+    },
+    {
+      path: '/user/:id',
+      name: 'user',
+      component: UserDetail
+    },
+
+    // Register & login
+    {
+      path: '/register',
+      component: () => import('@/components/Register.vue'),
+      meta: {requiresGuest: true}
+    },
+    {
+      path: '/login',
+      component: () => import('@/components/Login.vue'),
+      meta: {requiresGuest: true}
+    },
+    {
+      path: '/profile',
+      component: () => import('@/components/Profile.vue'),
+      meta: {requiresAuth: true}
+    },
   ]
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes
 })
+
+router.beforeEach((to, from, next) => {
+  const authStore = useAuthStore()
+
+  if (to.meta.requiresAuth && !authStore.isAuthenticated) {
+    next('/login')
+  } else if (to.meta.requiresGuest && authStore.isAuthenticated) {
+    next('/')
+  } else {
+    next()
+  }
+})
+
 
 export default router

@@ -6,7 +6,7 @@ import { useVideoDetail } from '@/stores/video';
 const router = useRoute();
 const videoDetail = useVideoDetail();
 
-onMounted(async ()=> {
+onMounted(async () => {
     const videoId = router.params.id
     if (videoId) {
         await videoDetail.fetchDetailVideo(videoId)
@@ -20,7 +20,6 @@ onMounted(async ()=> {
     <video controls :src="videoDetail.video.video" :poster="videoDetail.video.preview || 'src/assets/dont_preview.png'" class="video"></video>
     <h2 class="title">{{ videoDetail.video.name }}</h2>
     <p class="desc">{{ videoDetail.video.description }}</p>
-    <!-- <p class="date">{{ formatDate(videoDetail.video.date_upload) }}</p> -->
   </div>
 </template>
 
