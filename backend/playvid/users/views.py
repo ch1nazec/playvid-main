@@ -5,7 +5,7 @@ from django.views.decorators.cache import cache_page
 from users.models import CustomUser, Channel
 from users.serializers import UserSerializer, ChannelSerializer
 
-from rest_framework import generics
+from rest_framework import generics, status
 from rest_framework.permissions import AllowAny, IsAuthenticated, BasePermission
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -38,6 +38,8 @@ class CurrentUserView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
+        if not request.user.is_authenticated:
+            return Response(data={'status': 'Unauthorized'}, status=status.HTTP_401_UNAUTHORIZED)
         serializer = UserSerializer(request.user)
         return Response(serializer.data)
 

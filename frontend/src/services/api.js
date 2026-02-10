@@ -1,4 +1,6 @@
 import axios from "axios";
+import router from '@/router';
+
 
 const api = axios.create({
     baseURL: 'http://localhost:8000/api',
@@ -21,7 +23,7 @@ api.interceptors.response.use(
 
             try {
                 const refreshToken = localStorage.getItem('refresh_token');
-                const response = api.post(
+                const response = await api.post(
                     'http://localhost:8000/api/token/refresh/',
                     { refresh: refreshToken }
                 )
@@ -34,7 +36,7 @@ api.interceptors.response.use(
                 localStorage.removeItem('access_token')
                 localStorage.removeItem('refresh_token')
 
-                window.location.href = '/login'
+                router.push('/login');
                 return Promise.reject(refreshError)
             }
         }

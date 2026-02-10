@@ -1,15 +1,27 @@
 <script setup>
+import Header from './components/Header.vue';
 
 </script>
 
 <template>
-    <div id="app">
-        <router-link to="/">Главная</router-link><br>
-        <router-view></router-view>
-    </div>
 
+    <div class="app-root">
+    <Header />
+    <main class="main-content">
+      <router-view />
+    </main>
+    
+  </div>
 </template>
 
-<style scoped>
+<style>
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
+.main-content {
+  flex: 1 0 auto;
+}
 </style>

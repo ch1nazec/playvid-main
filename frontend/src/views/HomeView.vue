@@ -8,6 +8,7 @@ import _ from 'lodash';
 
 
 const videosStore = useVideosStore();
+
 const { videos } = storeToRefs(videosStore);
 let sortField = ref("date_upload");
 
@@ -27,6 +28,9 @@ onMounted(() => {
 </script>
 
 <template>
+    <div id="app">
+        <router-view />
+    </div>
     <VideosSort :toggleSort="toggleSort"/>
     <div class="videos-container">
         <div v-for="video in videosSorted" :key="video.id" class="video-card">

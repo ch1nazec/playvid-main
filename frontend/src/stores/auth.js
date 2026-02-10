@@ -1,52 +1,73 @@
 import { defineStore } from "pinia"
 import { ref, computed } from "vue"
+import Cookies from "js-cookie"
 import api from '@/services/api'
 import router from "@/router"
+import '@/assets/main.css'
 
 
 export const useAuthStore = defineStore('auth', () => {
     const user = ref(null)
-    const isAuthenticated = computed(() => !!user.value)
-
-    const login = async (credential) => {
+    const isInitialized = ref(false)
+    const isLoading = ref(false)
+    
+    const isAuthenticated = computed(() => {
+        return !!localStorage.getItem('access_token')
+    })
+    
+    const fetchUser = async() => {
         try {
-            const response = await api.post('/token/', credential)
-            localStorage.setItem('access_token', response.data.success)
-            localStorage.setItem('refresh_token', response.data.refresh)
-            
-            await fetchUser()
-            router.push('/')
-        } catch (error) {
-            throw error
+            const {data} = await api.get('/users/me')
+            user.value = data;
+            return data
+        } catch (e) {
+            logout()
         }
     }
-    const logout = () => {
+
+    const initialize = async () => {
+        if (localStorage.getItem('access_token')) {
+            await fetchUser()
+        }
+        isInitialized.value = true
+    }
+    
+    const login = async (credential) => {
+        const { data } = await api.post('/token/', credential);
+        localStorage.setItem('access_token', data.access)
+        localStorage.setItem('refresh_token', data.refresh)
+
+        await fetchUser();
+        router.push('/')
+    }
+
+    const logout = async () => {
+        isLoading.value = true
+
+        try {
+            clearUser()  
+        } catch (error) {
+            isLoading.value = false
+        }
+    }
+
+    const clearUser = () => {
         localStorage.removeItem('access_token')
         localStorage.removeItem('refresh_token')
+
         user.value = null
-        router.push('/login')
-    }
-    const fetchUser = async () => {
-        try {
-            const response = await api.get('/user/me')
-            user.value = response.data
-        } catch (error) {
-            console.log('Failed to fetch user')
-        }
-    }
-    const initialize = () => {
-        const token = localStorage.getItem('access_token')
-        if (token) {
-            fetchUser()
-        }
+
+        Cookies.remove('access_token')
+        Cookies.remove('refresh_token')   
     }
 
     return {
         user,
         isAuthenticated,
+        isInitialized,
+        fetchUser,
         login,
         logout,
-        fetchUser,
         initialize
     }
 })

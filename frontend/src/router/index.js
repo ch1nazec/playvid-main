@@ -47,9 +47,16 @@ const routes = [
     },
     {
       path: '/profile',
+      name: 'profile',
       component: () => import('@/components/Profile.vue'),
       meta: {requiresAuth: true}
     },
+    {
+      path: '/logout',
+      name: 'logout',
+      component: () => import('@/views/Logout.vue'),
+      meta: {requiresAuth: true}
+    }
   ]
 
 const router = createRouter({
@@ -58,11 +65,15 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  const authStore = useAuthStore()
+  const auth = useAuthStore()
 
-  if (to.meta.requiresAuth && !authStore.isAuthenticated) {
+  if (!auth.isInitialized) {
+    return next()
+  }
+
+  if (to.meta.requiresAuth && !auth.isAuthenticated) {
     next('/login')
-  } else if (to.meta.requiresGuest && authStore.isAuthenticated) {
+  } else if (to.meta.requiresGuest && auth.isAuthenticated) {
     next('/')
   } else {
     next()
